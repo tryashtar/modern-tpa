@@ -2,5 +2,7 @@ $scoreboard objectives remove tpa_$(name)
 $scoreboard objectives remove tpaccept_$(name)
 $scoreboard objectives remove tpcancel_$(name)
 $scoreboard objectives remove tpreject_$(name)
+$scoreboard objectives remove tpaout_$(name)
+$scoreboard objectives remove tpain_$(name)
 data remove storage tpa:data names[0]
 execute if data storage tpa:data names[0] run function tpa:reset_loop with storage tpa:data names[0]
