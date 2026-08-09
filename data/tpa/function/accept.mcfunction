@@ -5,4 +5,4 @@ $scoreboard players enable $(from) tpa_$(to)
 $tp $(from) ~ ~ ~ ~ ~
 $tellraw $(from) {text:"Your teleport request to $(to) was accepted",color:"gold"}
 $data remove storage tpa:data pending[{from:"$(from)",to:"$(to)"}]
-
+$stopwatch remove tpa:$(from)_$(to)
