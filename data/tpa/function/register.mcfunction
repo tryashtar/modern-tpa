@@ -8,5 +8,3 @@ data modify storage tpa:data entry.name set from entity 6654354e-7c71-4608-b98e-
 kill 6654354e-7c71-4608-b98e-a7986ad62697
 function tpa:create with storage tpa:data entry
 data modify storage tpa:data names append from storage tpa:data entry
-function tpa:menu_append with storage tpa:data entry
-data modify storage tpa:data menu[-1].entry set from storage tpa:data entry

@@ -1,1 +1,1 @@
-$data remove storage tpa:data personal_menu[{entry:{index:$(personal_id)}}]
+$data remove storage tpa:data personal_menu[{index:$(personal_id)}]
