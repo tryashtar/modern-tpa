@@ -9,6 +9,5 @@ execute unless score #players tpaindex = #last_players tpaindex run function tpa
 # check for trigger inputs
 data modify storage tpa:data iter set from storage tpa:data names
 execute if data storage tpa:data iter[0] run function tpa:check_loop with storage tpa:data iter[0]
-execute as @a[scores={tpaccept=1..}] at @s run function tpa:accept
 execute as @a[scores={tpa=1..}] at @s run function tpa:menu
 scoreboard players enable @a tpa
