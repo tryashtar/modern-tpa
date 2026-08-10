@@ -1,0 +1,31 @@
+{
+  "type": "multi_action",
+  "title": {
+    "translate": "tpa.menu.main.title",
+    "fallback": "Teleport Requests"
+  },
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "translate": "tpa.menu.main.tpa",
+        "fallback": "Teleport to player"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger tpa"
+      }
+    },
+    {
+      "label": {
+        "translate": "tpa.menu.main.tpahere",
+        "fallback": "Teleport player to you"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger tpahere"
+      }
+    }
+  ],
+  "exit_action": { "label": { "translate": "gui.cancel" } }
+}
