@@ -19,5 +19,7 @@ data modify storage tpa:data iter set from storage tpa:data online_names
 execute if data storage tpa:data iter[0] run function tpa:request/check_loop with storage tpa:data iter[0]
 
 # handle pending requests
+scoreboard players set #ended tpaindex 0
 data modify storage tpa:data iter set from storage tpa:data pending
 execute if data storage tpa:data iter[0] run function tpa:pending/check_loop with storage tpa:data iter[0]
+execute if score #ended tpaindex matches 1 run function tpa:pending/end_clear
