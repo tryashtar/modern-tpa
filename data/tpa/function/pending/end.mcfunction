@@ -10,5 +10,5 @@ scoreboard players set #ended tpaindex 1
 $tag $(to) add tpa_end1
 $tag $(from) add tpa_end2
 
-$stopwatch remove tpa:$(from)/$(to)
+$stopwatch remove tpa:timeout_$(from_index)/$(to_index)
 $data remove storage tpa:data persist.pending[{from:"$(from)",to:"$(to)"}]
