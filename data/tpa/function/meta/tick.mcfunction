@@ -9,10 +9,9 @@ execute store result score #players tpaindex if entity @a
 execute unless score #players tpaindex = #last_players tpaindex run function tpa:online/find
 
 # handle menu open triggers
+# enabling must be done every tick, since players can run "trigger add 0" to disable their own trigger
 execute if score #players tpaindex matches 2.. run scoreboard players enable @a tpa
 execute if score #players tpaindex matches 2.. run scoreboard players enable @a tpahere
-execute if score #players tpaindex matches 1 run scoreboard players reset @a tpa
-execute if score #players tpaindex matches 1 run scoreboard players reset @a tpahere
 execute as @a[scores={tpa=1..}] at @s run function tpa:menu/open
 execute as @a[scores={tpahere=1..}] at @s run function tpa:menu_here/open
 

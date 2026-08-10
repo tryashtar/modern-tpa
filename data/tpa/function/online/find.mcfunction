@@ -10,6 +10,10 @@ data modify storage tpa:data temp.iter set from storage tpa:data persist.players
 execute if data storage tpa:data temp.iter[0] run function tpa:online/find_loop with storage tpa:data temp.iter[0]
 
 # disable lingering triggers for joining players
-data modify storage tpa:data temp.iter set from storage tpa:data temp.names
-execute if entity @a[tag=tpa_join,limit=1] if data storage tpa:data temp.iter[0] run function tpa:online/join_loop
+data modify storage tpa:data temp.iter set from storage tpa:data persist.players
+execute if entity @a[tag=tpa_join,limit=1] if data storage tpa:data temp.iter[0] run function tpa:online/join_loop with storage tpa:data temp.iter[0]
+
+execute if score #players tpaindex matches 1 run tag @a add tpa_join
+scoreboard players reset @a[tag=tpa_join] tpa
+scoreboard players reset @a[tag=tpa_join] tpahere
 tag @a[tag=tpa_join] remove tpa_join
