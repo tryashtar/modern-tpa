@@ -7,9 +7,9 @@ $scoreboard objectives add tpreject_$(name) trigger {translate:"tpa.trigger.reje
 
 # this will be inserted into the menu with a macro
 # the "index" field is not part of the dialog schema, it's for filtering
-$data modify storage tpa:data entry.menu set value {tpa:{index:$(index),label:{translate:"tpa.menu.request.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu.request.tooltip",fallback:"Request to teleport to this player"},action:{type:"run_command",command:"trigger tpa_$(name)"}},tpahere:{index:$(index),label:{translate:"tpa.menu.request_here.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu_here.request.tooltip",fallback:"Request this player to teleport to you"},action:{type:"run_command",command:"trigger tpahere_$(name)"}}}
-$data modify storage tpa:data lookups.$(index) set value "$(name)"
+$data modify storage tpa:data temp.entry.menu set value {tpa:{index:$(index),label:{translate:"tpa.menu.request.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu.request.tooltip",fallback:"Request to teleport to this player"},action:{type:"run_command",command:"trigger tpa_$(name)"}},tpahere:{index:$(index),label:{translate:"tpa.menu.request_here.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu_here.request.tooltip",fallback:"Request this player to teleport to you"},action:{type:"run_command",command:"trigger tpahere_$(name)"}}}
+$data modify storage tpa:data persist.lookups.$(index) set value "$(name)"
 
 # command to run when later searching for online players
 # this player is online now, so we check to see if they go offline
-$data modify storage tpa:data entry.online_check set value 'execute unless entity $(name) run function tpa:online/leave {name:"$(name)",index:$(index)}'
+$data modify storage tpa:data temp.entry.online_check set value 'execute unless entity $(name) run function tpa:online/leave {name:"$(name)",index:$(index)}'

@@ -18,5 +18,5 @@ $execute as $(to) if score @s tpaccept matches 1.. run function tpa:pending/acce
 $execute as $(to) if score @s tpreject_$(from) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
 $execute as $(to) if score @s tpreject matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
 
-data remove storage tpa:data iter[0]
-execute if data storage tpa:data iter[0] run function tpa:pending/check_loop with storage tpa:data iter[0]
+data remove storage tpa:data temp.iter[0]
+execute if data storage tpa:data temp.iter[0] run function tpa:pending/check_loop with storage tpa:data temp.iter[0]

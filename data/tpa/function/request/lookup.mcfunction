@@ -1,1 +1,1 @@
-$data modify storage tpa:data iter[0].sender set from storage tpa:data lookups.$(sender_index)
+$data modify storage tpa:data temp.iter[0].sender set from storage tpa:data persist.lookups.$(sender_index)

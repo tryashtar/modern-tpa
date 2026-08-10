@@ -11,4 +11,4 @@ $tag $(to) add tpa_end1
 $tag $(from) add tpa_end2
 
 $stopwatch remove tpa:$(from)/$(to)
-$data remove storage tpa:data pending[{from:"$(from)",to:"$(to)"}]
+$data remove storage tpa:data persist.pending[{from:"$(from)",to:"$(to)"}]
