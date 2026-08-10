@@ -1,7 +1,7 @@
 scoreboard players reset @s tpahere
 
 data modify storage tpa:data personal.menu set value []
-data modify storage tpa:data personal.menu append from storage tpa:data online_menu[].tpahere
+data modify storage tpa:data personal.menu append from storage tpa:data online_names[].menu.tpahere
 
 # add user-specific entries to the menu
 execute store result storage tpa:data personal.id int 1 run scoreboard players get @s tpaindex

@@ -4,8 +4,7 @@ scoreboard players reset @a tpcancel
 scoreboard players reset @a tpreject
 scoreboard players reset @a tpaccept
 
-# we also build online-only versions of the name and menu lists
-data modify storage tpa:data online_menu set from storage tpa:data menu
+# we also build an online-only version of the name list
 data modify storage tpa:data online_names set from storage tpa:data names
 data modify storage tpa:data iter set from storage tpa:data names
 execute if data storage tpa:data iter[0] run function tpa:online/find_loop with storage tpa:data iter[0]

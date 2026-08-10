@@ -3,4 +3,4 @@
 tag @s add tpa_join
 
 # toggle the online check for next time
-$data modify storage tpa:data names[{name:"$(name)"}].online_check set value 'execute unless entity $(name) run function tpa:online/leave {name:"$(name)",index:$(index)}'
+$data modify storage tpa:data names[{name:"$(name)"}].online_check set value 'execute unless entity $(name) run function tpa:online/leave {name:"$(name)"}'

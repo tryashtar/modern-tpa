@@ -10,7 +10,7 @@
           "translate": "tpa.pack.credit",
           "fallback": "- by %s %s",
           "with": [
-            { "player": { "name": "tryashtar" }, "color": "white" },
+            { "player": "tryashtar", "color": "white" },
             { "text": "tryashtar", "color": "#468beb" }
           ],
           "color": "gray"

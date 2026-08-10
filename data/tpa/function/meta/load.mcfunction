@@ -6,3 +6,5 @@ scoreboard objectives add tpahere trigger {translate:"tpa.trigger.menu_here",fal
 scoreboard objectives add tpaccept trigger {translate:"tpa.trigger.accept_all",fallback:"Accept all teleport requests to you"}
 scoreboard objectives add tpreject trigger {translate:"tpa.trigger.reject_all",fallback:"Reject all teleport requests to you"}
 scoreboard objectives add tpcancel trigger {translate:"tpa.trigger.cancel_all",fallback:"Cancel all your teleport requests"}
+
+function tpa:online/find
