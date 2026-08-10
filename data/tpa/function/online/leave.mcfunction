@@ -1,6 +1,7 @@
 # this player has left the game
 # cancel all requests related to them
 $scoreboard players reset @a tpa_$(name)
+$scoreboard players reset @a tpahere_$(name)
 $scoreboard players reset @a tpcancel_$(name)
 $scoreboard players reset @a tpreject_$(name)
 $scoreboard players reset @a tpaccept_$(name)

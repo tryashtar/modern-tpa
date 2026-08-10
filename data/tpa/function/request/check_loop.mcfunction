@@ -8,10 +8,12 @@ execute if data storage tpa:data incoming_requests[0] run function tpa:request/e
 
 # now enable the trigger for all allowed players
 $scoreboard players enable @a[name=!$(name),tag=!tpa_incoming] tpa_$(name)
+$scoreboard players enable @a[name=!$(name),tag=!tpa_incoming] tpahere_$(name)
 tag @a[tag=tpa_incoming] remove tpa_incoming
 
 # handle requests that have been triggered
 $execute as @a[scores={tpa_$(name)=1..}] run function tpa:request/make {name:"$(name)"}
+$execute as @a[scores={tpahere_$(name)=1..}] run function tpa:request/make_here {name:"$(name)"}
 
 data remove storage tpa:data iter[0]
 execute if data storage tpa:data iter[0] run function tpa:request/check_loop with storage tpa:data iter[0]

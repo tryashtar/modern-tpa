@@ -10,7 +10,9 @@ execute unless score #players tpaindex = #last_players tpaindex run function tpa
 
 # handle menu open triggers
 scoreboard players enable @a tpa
+scoreboard players enable @a tpahere
 execute as @a[scores={tpa=1..}] at @s run function tpa:menu/open
+execute as @a[scores={tpahere=1..}] at @s run function tpa:menu_here/open
 
 # check for new requests
 data modify storage tpa:data iter set from storage tpa:data online_names

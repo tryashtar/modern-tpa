@@ -8,6 +8,7 @@ $scoreboard players reset $(to) tpreject
 $scoreboard players reset $(from) tpcancel_$(to)
 $scoreboard players reset $(from) tpcancel
 $scoreboard players enable $(from) tpa_$(to)
+$scoreboard players enable $(from) tpahere_$(to)
 
 $stopwatch remove tpa:$(from)/$(to)
 $data remove storage tpa:data pending[{from:"$(from)",to:"$(to)"}]

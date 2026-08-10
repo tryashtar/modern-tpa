@@ -1,4 +1,5 @@
 $scoreboard objectives remove tpa_$(name)
+$scoreboard objectives remove tpahere_$(name)
 $scoreboard objectives remove tpaccept_$(name)
 $scoreboard objectives remove tpcancel_$(name)
 $scoreboard objectives remove tpreject_$(name)

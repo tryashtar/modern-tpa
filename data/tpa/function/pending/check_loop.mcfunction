@@ -13,8 +13,8 @@ $execute if stopwatch tpa:$(from)/$(to) 60.. run function tpa:pending/end {from:
 # fulfill requests
 $execute as $(from) if score @s tpcancel_$(to) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
 $execute as $(from) if score @s tpcancel matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
-$execute as $(to) if score @s tpaccept_$(from) matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)"}
-$execute as $(to) if score @s tpaccept matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)"}
+$execute as $(to) if score @s tpaccept_$(from) matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)",accept:"$(accept)"}
+$execute as $(to) if score @s tpaccept matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)",accept:"$(accept)"}
 $execute as $(to) if score @s tpreject_$(from) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
 $execute as $(to) if score @s tpreject matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)"}
 
