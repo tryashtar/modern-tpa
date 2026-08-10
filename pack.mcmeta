@@ -1,7 +1,24 @@
 {
   "pack": {
-    "description": "Simple /tpa command implementation with triggers and macros",
-    "min_format": 100,
-    "max_format": 100
+    "description": {
+      "translate": "tpa.pack.description",
+      "fallback": "Send teleport requests with %s and %s.\n%s",
+      "with": [
+        { "text": "/trigger tpa", "color": "gold" },
+        { "text": "/trigger tpahere", "color": "gold" },
+        {
+          "translate": "tpa.pack.credit",
+          "fallback": "- by %s %s",
+          "with": [
+            { "player": { "name": "tryashtar" }, "color": "white" },
+            { "text": "tryashtar", "color": "#468beb" }
+          ],
+          "color": "gray"
+        }
+      ],
+      "color": "green"
+    },
+    "min_format": 115,
+    "max_format": 115
   }
 }
