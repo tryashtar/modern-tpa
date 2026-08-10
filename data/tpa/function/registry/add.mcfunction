@@ -1,13 +1,13 @@
 # create per-player triggers
-$scoreboard objectives add tpa_$(name) trigger {translate:"tpa.trigger.request",fallback:"Request to teleport to %s",with:["$(name)"]}
-$scoreboard objectives add tpahere_$(name) trigger {translate:"tpa.trigger.request",fallback:"Request %s to teleport to you",with:["$(name)"]}
-$scoreboard objectives add tpcancel_$(name) trigger {translate:"tpa.trigger.cancel",fallback:"Cancel teleport request to %s",with:["$(name)"]}
-$scoreboard objectives add tpaccept_$(name) trigger {translate:"tpa.trigger.accept",fallback:"Accept %s's teleport request",with:["$(name)"]}
-$scoreboard objectives add tpreject_$(name) trigger {translate:"tpa.trigger.reject",fallback:"Reject %s's teleport request",with:["$(name)"]}
+$scoreboard objectives add tpa.$(name) trigger {translate:"tpa.trigger.request",fallback:"Request to teleport to %s",with:["$(name)"]}
+$scoreboard objectives add tpahere.$(name) trigger {translate:"tpa.trigger.request",fallback:"Request %s to teleport to you",with:["$(name)"]}
+$scoreboard objectives add tpcancel.$(name) trigger {translate:"tpa.trigger.cancel",fallback:"Cancel teleport request to %s",with:["$(name)"]}
+$scoreboard objectives add tpaccept.$(name) trigger {translate:"tpa.trigger.accept",fallback:"Accept %s's teleport request",with:["$(name)"]}
+$scoreboard objectives add tpreject.$(name) trigger {translate:"tpa.trigger.reject",fallback:"Reject %s's teleport request",with:["$(name)"]}
 
 # this will be inserted into the menu with a macro
 # the "index" field is not part of the dialog schema, it's for filtering
-$data modify storage tpa:data temp.entry.menu set value {tpa:{index:$(index),label:{translate:"tpa.menu.request.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu.request.tooltip",fallback:"Request to teleport to this player"},action:{type:"run_command",command:"trigger tpa_$(name)"}},tpahere:{index:$(index),label:{translate:"tpa.menu.request_here.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu_here.request.tooltip",fallback:"Request this player to teleport to you"},action:{type:"run_command",command:"trigger tpahere_$(name)"}}}
+$data modify storage tpa:data temp.entry.menu set value {tpa:{index:$(index),label:{translate:"tpa.menu.request.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu.request.tooltip",fallback:"Request to teleport to this player"},action:{type:"run_command",command:"trigger tpa.$(name)"}},tpahere:{index:$(index),label:{translate:"tpa.menu.request_here.button",fallback:"%s %s %s",with:[{atlas:"gui",sprite:"friends/send_request",shadow_color:0},{player:"$(name)"},"$(name)"]},tooltip:{translate:"tpa.menu_here.request.tooltip",fallback:"Request this player to teleport to you"},action:{type:"run_command",command:"trigger tpahere.$(name)"}}}
 $data modify storage tpa:data persist.lookups.$(index) set value "$(name)"
 
 # command to run when later searching for online players

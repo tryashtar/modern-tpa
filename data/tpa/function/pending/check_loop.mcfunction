@@ -1,21 +1,21 @@
 # enable triggers for this request
 # this must be done every tick, since players can run "trigger add 0" to disable their own trigger
-$scoreboard players enable $(from) tpcancel_$(to)
+$scoreboard players enable $(from) tpcancel.$(to)
 $scoreboard players enable $(from) tpcancel
-$scoreboard players enable $(to) tpaccept_$(from)
+$scoreboard players enable $(to) tpaccept.$(from)
 $scoreboard players enable $(to) tpaccept
-$scoreboard players enable $(to) tpreject_$(from)
+$scoreboard players enable $(to) tpreject.$(from)
 $scoreboard players enable $(to) tpreject
 
 # handle timeouts
-$execute if stopwatch tpa:timeout_$(from_index)/$(to_index) 60.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
+$execute if stopwatch tpa:timeout_$(from_index)_$(to_index) 60.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
 
 # fulfill requests
-$execute as $(from) if score @s tpcancel_$(to) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
+$execute as $(from) if score @s tpcancel.$(to) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
 $execute as $(from) if score @s tpcancel matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
-$execute as $(to) if score @s tpaccept_$(from) matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index),accept:"$(accept)"}
+$execute as $(to) if score @s tpaccept.$(from) matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index),accept:"$(accept)"}
 $execute as $(to) if score @s tpaccept matches 1.. run function tpa:pending/accept {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index),accept:"$(accept)"}
-$execute as $(to) if score @s tpreject_$(from) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
+$execute as $(to) if score @s tpreject.$(from) matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
 $execute as $(to) if score @s tpreject matches 1.. run function tpa:pending/end {from:"$(from)",to:"$(to)",from_index:$(from_index),to_index:$(to_index)}
 
 data remove storage tpa:data temp.iter[0]
