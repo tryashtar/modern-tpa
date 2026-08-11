@@ -1,4 +1,4 @@
-$stopwatch remove tpa:timeout_$(from_index)_$(to_index)
+$execute unless entity $(name) run function tpa:online/leave {name:"$(name)"}
 
-data remove storage tpa:data temp.removing[0]
-execute if data storage tpa:data temp.removing[0] run function tpa:online/leave_loop with storage tpa:data temp.removing[0]
+data remove storage tpa:data temp.iter[0]
+execute if data storage tpa:data temp.iter[0] run function tpa:online/leave_loop with storage tpa:data temp.iter[0]

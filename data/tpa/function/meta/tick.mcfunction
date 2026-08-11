@@ -1,6 +1,3 @@
-# register newly-joined (or renamed) players
-execute as @a at @s unless score @s tpaindex matches 1.. run function tpa:registry/register
-
 # check for players that have joined or left
 # we need to cancel all requests involving leaving players, and reset lingering triggers for joining players
 # obviously, the leave_game criteria fires too late to be useful

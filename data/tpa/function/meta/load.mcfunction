@@ -7,4 +7,5 @@ scoreboard objectives add tpaccept trigger {translate:"tpa.trigger.accept_all",f
 scoreboard objectives add tpreject trigger {translate:"tpa.trigger.reject_all",fallback:"Reject all teleport requests to you"}
 scoreboard objectives add tpcancel trigger {translate:"tpa.trigger.cancel_all",fallback:"Cancel all your teleport requests"}
 
+execute store result score #players tpaindex if entity @a
 function tpa:online/find
